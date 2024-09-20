@@ -31,7 +31,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'gorah.onrender.com',
     'gorah-backend.onrender.com'
     'localhost',
     '127.0.0.1',
@@ -175,15 +174,12 @@ if DEBUG:
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
-        'https://gorah.onrender.com',
         'https://gorah-backend.onrender.com',
     ]
     CSRF_TRUSTED_ORIGINS = [
-        'https://gorah.onrender.com',
         'https://gorah-backend.onrender.com',
     ]
     CORS_ORIGIN_WHITELIST = [
-        'https://gorah.onrender.com',
         'https://gorah-backend.onrender.com',
     ]
 CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript access to the CSRF token (optional)
