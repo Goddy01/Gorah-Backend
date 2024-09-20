@@ -32,6 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'gorah-backend.onrender.com'
+    'refnet.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
@@ -174,12 +175,15 @@ if DEBUG:
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
+        'https://refnet.onrender.com',
         'https://gorah-backend.onrender.com',
     ]
     CSRF_TRUSTED_ORIGINS = [
+        'https://refnet.onrender.com',
         'https://gorah-backend.onrender.com',
     ]
     CORS_ORIGIN_WHITELIST = [
+        'https://refnet.onrender.com',
         'https://gorah-backend.onrender.com',
     ]
 CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript access to the CSRF token (optional)
