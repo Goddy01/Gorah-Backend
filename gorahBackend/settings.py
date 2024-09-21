@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'gorah-backend.onrender.com'
+    'gorah-backend.onrender.com',
     'refnet.onrender.com',
     'localhost',
     '127.0.0.1',
@@ -40,15 +40,14 @@ ALLOWED_HOSTS = [
 CORS_ALLOW_CREDENTIALS = True
 if DEBUG:
     CORS_ALLOWED_ORIGINS = [
-        'http://localhost:5173',
-        'http://localhost:8000'
+        'http://localhost:5174',
+        'http://127.0.0.1:8000'
     ]
     CSRF_TRUSTED_ORIGINS = [
-        'http://localhost:5173',
+        'http://localhost:5174',
     ]
     CORS_ORIGIN_WHITELIST = [
-
-        'http://localhost:5173',
+        'http://localhost:5174',
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
@@ -57,11 +56,11 @@ else:
     ]
     CSRF_TRUSTED_ORIGINS = [
         'https://refnet.onrender.com',
-        'https://gorah-backend.onrender.com',
+        # 'https://gorah-backend.onrender.com',
     ]
     CORS_ORIGIN_WHITELIST = [
         'https://refnet.onrender.com',
-        'https://gorah-backend.onrender.com',
+        # 'https://gorah-backend.onrender.com',
     ]
 
 # Application definition

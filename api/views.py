@@ -12,7 +12,6 @@ from .serializers import WaitlistSerializer
 class WaitlistView(APIView):
     def post(self, request, *args, **kwargs):
         email = request.data.get('email')  # Extract the email from the request
-
         if Waitlist.objects.filter(email=email).exists():
             return Response({"error": "This email is already on the waitlist."}, status=status.HTTP_400_BAD_REQUEST)
         
