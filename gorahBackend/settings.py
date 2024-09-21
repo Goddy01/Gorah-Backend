@@ -38,6 +38,32 @@ ALLOWED_HOSTS = [
 ]
 
 
+if DEBUG:
+    CORS_ALLOWED_ORIGINS = [
+        'http://localhost:5173',
+        'http://localhost:8000'  # React app URL
+    ]
+    CSRF_TRUSTED_ORIGINS = [
+        'http://localhost:5173',
+    ]
+    CORS_ORIGIN_WHITELIST = [
+
+        'http://localhost:5173',
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        'https://refnet.onrender.com',
+        'https://gorah-backend.onrender.com',
+    ]
+    CSRF_TRUSTED_ORIGINS = [
+        'https://refnet.onrender.com',
+        'https://gorah-backend.onrender.com',
+    ]
+    CORS_ORIGIN_WHITELIST = [
+        'https://refnet.onrender.com',
+        'https://gorah-backend.onrender.com',
+    ]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,6 +79,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -61,7 +88,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'gorahBackend.urls'
@@ -161,30 +187,5 @@ EMAIL_TIMEOUT = 30  # Increase the timeout value
 
 CORS_ALLOW_CREDENTIALS = True
 
-if DEBUG:
-    CORS_ALLOWED_ORIGINS = [
-        'http://localhost:5173',
-        'http://localhost:8000'  # React app URL
-    ]
-    CSRF_TRUSTED_ORIGINS = [
-        'http://localhost:5173',
-    ]
-    CORS_ORIGIN_WHITELIST = [
-
-        'http://localhost:5173',
-    ]
-else:
-    CORS_ALLOWED_ORIGINS = [
-        'https://refnet.onrender.com',
-        'https://gorah-backend.onrender.com',
-    ]
-    CSRF_TRUSTED_ORIGINS = [
-        'https://refnet.onrender.com',
-        'https://gorah-backend.onrender.com',
-    ]
-    CORS_ORIGIN_WHITELIST = [
-        'https://refnet.onrender.com',
-        'https://gorah-backend.onrender.com',
-    ]
 CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript access to the CSRF token (optional)
 CSRF_COOKIE_SAMESITE = 'Lax'  # Prevent CSRF attacks from other sites
