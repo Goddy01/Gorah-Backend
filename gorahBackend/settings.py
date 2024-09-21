@@ -37,11 +37,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-
+CORS_ALLOW_CREDENTIALS = True
 if DEBUG:
     CORS_ALLOWED_ORIGINS = [
         'http://localhost:5173',
-        'http://localhost:8000'  # React app URL
+        'http://localhost:8000'
     ]
     CSRF_TRUSTED_ORIGINS = [
         'http://localhost:5173',
@@ -68,6 +68,7 @@ else:
 
 INSTALLED_APPS = [
     'api',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,15 +76,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -184,8 +184,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = 'Gorah <noreply@gorah.io>'
 # EMAIL_USE_SSL = False  # Set to False if you're using TLS
 EMAIL_TIMEOUT = 30  # Increase the timeout value
-
-CORS_ALLOW_CREDENTIALS = True
 
 CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript access to the CSRF token (optional)
 CSRF_COOKIE_SAMESITE = 'Lax'  # Prevent CSRF attacks from other sites
