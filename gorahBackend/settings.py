@@ -40,14 +40,14 @@ ALLOWED_HOSTS = [
 CORS_ALLOW_CREDENTIALS = True
 if DEBUG:
     CORS_ALLOWED_ORIGINS = [
-        'http://localhost:5174',
+        'http://localhost:5173',
         'http://127.0.0.1:8000'
     ]
     CSRF_TRUSTED_ORIGINS = [
-        'http://localhost:5174',
+        'http://localhost:5173',
     ]
     CORS_ORIGIN_WHITELIST = [
-        'http://localhost:5174',
+        'http://localhost:5173',
     ]
 else:
     CORS_ALLOWED_ORIGINS = [
@@ -180,9 +180,8 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False  # This should be False when using TLS
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'Gorah <noreply@gorah.io>'
-# EMAIL_USE_SSL = False  # Set to False if you're using TLS
-EMAIL_TIMEOUT = 30  # Increase the timeout value
+DEFAULT_FROM_EMAIL = 'Refnet <noreply@refnet.io>'
+EMAIL_TIMEOUT = 60  # Increase the timeout value
 
 CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript access to the CSRF token (optional)
 CSRF_COOKIE_SAMESITE = 'Lax'  # Prevent CSRF attacks from other sites
