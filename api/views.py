@@ -28,21 +28,21 @@ class WaitlistView(APIView):
                 <div style="padding: 20px; background-color: white; border-radius: 0 0 10px 10px;">
                     <p style="font-size: 16px; color: #333;">Hi there,</p>
                     <p style="font-size: 16px; color: #333;">
-                        Thank you for joining the waitlist for <strong>Gorah</strong>.
+                        Thank you for joining the waitlist for <strong>Refnet</strong>.
                         We’re excited to have you on board!
                     </p>
                     <p style="font-size: 16px; color: #333;">
                         You will be one of the first to know when we launch, and we can't wait to share our platform with you.
                     </p>
                     <div style="text-align: center; margin: 30px 0;">
-                        <a href="https://refnet.netlify.app" style="display: inline-block; background-color: #19469D; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Visit Our Website</a>
+                        <a href="https://refnet.onrender.com/" style="display: inline-block; background-color: #19469D; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Visit Our Website</a>
                     </div>
                     <p style="font-size: 14px; color: #777;text-align: center;">
                         If you have any questions, feel free to reach out to me personally at <a href="mailto:adigungodwin2@gmail.com" style="color: #19469D;">adigungodwin2@gmail.com</a>.
                     </p>
                 </div>
                 <div style="text-align: center; padding: 2px; font-size: 12px; color: #777;">
-                    <p>&copy; 2024 Gorah. All rights reserved.</p>
+                    <p>&copy; 2024 Refnet. All rights reserved.</p>
                     <p>Lagos, Nigeria</p>
                 </div>
             </div>
